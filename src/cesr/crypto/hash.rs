@@ -1,4 +1,5 @@
 use blake2::Digest;
+use sha3::Digest as DigestSha3; // required for compiling the sha3::Sha3_256::new() call;
 
 use crate::cesr::core::matter::tables as matter;
 use crate::error::{err, Error, Result};
