@@ -47,7 +47,7 @@ this document.
 ## Maintainers
 
 
-keride is a community effort but we acknowledge the significant contirbutions made by the following groups:
+keride is a community effort but we acknowledge the significant contributions made by the following groups:
 
 [![Qui Identity](https://qui.xyz/wp-content/uploads/2022/07/qui-logo-blue.svg)](https://qui.id)
 

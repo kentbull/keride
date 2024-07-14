@@ -1,5 +1,33 @@
 # Composable Event Streaming Representation (CESR)
 
+## Important Reference Material
+- trustoverip/[tswg-cesr-specification](https://github.com/trustoverip/tswg-cesr-specification) repository - [ToIP draft specification](https://trustoverip.github.io/tswg-cesr-specification/) for CESR
+- Design Assumptions, Use Cases, and ToDo list - [HackMD link](https://hackmd.io/W2Z39cuSSTmD2TovVLvAPg?view)
+- Introductory articles:
+    - [#1 CESR Proof Signatures](https://medium.com/happy-blockchains/cesr-proof-signatures-are-the-segwit-of-authentic-data-in-keri-e891c83e070a)
+    - [#2 CESR Overview](https://medium.com/happy-blockchains/cesr-one-of-sam-smiths-inventions-is-as-controversial-as-genius-d757f36b88f8)
+
+
+## Contributing
+
+If you want to contribute, check out the [issues](https://github.com/WebOfTrust/keride/issues).
+Tags provide some guidance.
+
+When starting a new issue, ensure there are no others working on the same thing to avoid duplicated
+effort (although alternative implementations are always welcome and considered):
+- check that there is no open pull request
+- make sure no one has assigned themselves
+- look for comments on the issue
+- look for development integrations ('linked an issue that may be closed by this pull request')
+
+When you find an issue you want to take on:
+- make yourself an assignee, if possible
+- open a [Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) against a branch you created against your fork - even if empty
+- paste a link to the PR in a comment on the issue you are working on for visibility
+
+For better coordination, join the `#cesr-dev` slack channel using the link at the bottom of
+this document.
+
 
 ## Development
 
@@ -184,3 +212,26 @@ appropriate argon2 parameters, consult [this document](https://argon2-cffi.readt
 - SHA2 512 ([sha2](https://docs.rs/sha2))
 
 Blake3 is recommended for most applications since it outperforms the other algorithms.
+
+#### Signing
+
+`cesride` supports the following signing algorithms:
+- Ed25519 ([ed25519-dalek](https://docs.rs/ed25519-dalek))
+- Secp256k1 ([k256](https://docs.rs/k256))
+- Secp256r1 ([p256](https://docs.rs/p256))
+
+We have planned support for Ed448.
+
+The ECDSA curves (Secp256k1 and Secp256r1) use randomized signatures. Ed25519 is always deterministic.
+This means that if you need to avoid correlation and want to use Ed25519, you'll need to salt your data
+for every use case that you do not want correlated. ACDC, for example, takes this into account, allowing for
+configurable use of Ed25519 by injecting salty nonces in the data to be signed where privacy is a concern.
+
+## Community
+
+### Bi-weekly Meeting
+[Information here](https://github.com/WebOfTrust/keri#meetings)
+
+### Discord
+- [Discord Invite](https://discord.gg/YEyTH5TfuB)
+    - `#cesr` channel.
