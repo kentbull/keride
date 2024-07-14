@@ -574,7 +574,7 @@ pub(crate) mod test {
         mod Codex {
             const EstOnly: &str = "EO";
             const DoNotDelegate: &str = "DND";
-            const NoBackeds: &str = "NB";
+            const NoBackers: &str = "NB";
         }
     }
 
