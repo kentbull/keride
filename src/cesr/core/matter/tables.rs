@@ -101,6 +101,10 @@ pub(crate) fn raw_size(code: &str) -> Result<u32> {
     Ok((szg.fs - cs) * 3 / 4 - szg.ls)
 }
 
+/// Code table for the first letter of a matter code for cryptographic primitives.
+/// Example: (good example or bad? kind of doesn't make sense yet due to missing A for version)
+///   The primitive -AABAADjfOjbPu9OWce59OQIc-y3Su4kvfC2BAd_e_NLHbXcOK8-3s6do5vBfrxQ1kDyvFGCPMcSl620dLMZ4QDYlvME
+///   As the "D" in the code as it's first letter, following the AABAA for the protocol and genus.
 #[allow(non_snake_case)]
 #[allow(non_upper_case_globals)]
 pub mod Codex {
