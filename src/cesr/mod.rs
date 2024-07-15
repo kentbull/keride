@@ -1,11 +1,12 @@
 pub(crate) mod core;
 pub(crate) mod crypto;
+mod parside;
 
 pub use crate::cesr::core::{
     bexter::{Bext, Bexter},
     cigar::Cigar,
     common,
-    counter::{tables as counter, Counter}, // This seems like it shoudl be an abstract class
+    counter::{tables as counter, Counter}, // This seems like it should be an abstract class
     creder::Creder,
     dater::Dater,
     diger::Diger,
